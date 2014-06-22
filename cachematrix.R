@@ -4,7 +4,8 @@
 ## These functions implement cacheing the inverse of a matrix.
 
 
-
+#makeCacheMatrix accepts matrix as input, creates a list containing functions to set the matrix, get the matrix, set the inverse
+#of the matrix and get the inverse of the matrix
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
         set <- function(y) {
@@ -20,8 +21,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
 
+#The following function calculates the inverse of matrix created with the above function. 
+#It checks if the inverse has already been calculated. If so, it gets the inverse from the cache and skips the 
+#computation. Otherwise it sets the value of the inverse in the cache via
+#the setinverse function.
 cacheSolve <- function(x, ...) {
         m <- x$getInv()
         if(!is.null(m)) {
